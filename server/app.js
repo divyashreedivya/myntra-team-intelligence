@@ -2,6 +2,7 @@ require('dotenv').config();
 
 var createError = require('http-errors');
 var express = require('express');
+var mongoose = require('mongoose');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -9,6 +10,8 @@ const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productRouter = require('./routes/product');
+var groupRouter = require('./routes/productGroup');
 
 var app = express();
 
@@ -24,8 +27,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+mongoose
+  .connect(
+     process.env.MONGO_URI,
+    { useNewUrlParser: true, useUnifiedTopology: true},
+  )
+  .then(() => {
+    console.log('DB CONNECTED');
+  })
+  .catch(console.log('DB NOT CONNECTED'));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/products',productRouter);
+app.use('/groups',groupRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
