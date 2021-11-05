@@ -21,8 +21,9 @@ class JitsiComponent extends Component {
         const options = {
             roomName: this.state.room,
             width: '100%',
-            height: 690,
-            configOverwrite: { prejoinPageEnabled: false },
+            height: 690
+            ,
+            configOverwrite: { prejoinPageEnabled: true },
             interfaceConfigOverwrite: {
                 // overwrite interface properties
             },
