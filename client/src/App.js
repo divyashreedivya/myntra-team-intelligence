@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 // import Home from "./components/Home";
 import Profile from "./components/Profile";
+import Shop from "./components/Shop";
+import Admin from "./components/Admin";
 // import BoardUser from "./components/BoardUser";
 // import BoardModerator from "./components/BoardModerator";
 // import BoardAdmin from "./components/BoardAdmin";
@@ -21,7 +23,9 @@ import { history } from "./helpers/history";
 const App = () => {
 
   const { user: currentUser } = useSelector((state) => state.auth);
+  const {isAdmin} = useSelector((state)=>state.user);
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     history.listen((location) => {
@@ -47,7 +51,11 @@ const App = () => {
                 Home
               </Link>
             </li>
-
+            <li className="nav-item">
+              <Link to={"/products"} className="nav-link">
+                Products
+              </Link>
+            </li>
 
             {/* {currentUser && (
               <li className="nav-item">
@@ -85,7 +93,17 @@ const App = () => {
                 </Link>
               </li>
             </div>
+            
           )}
+          {isAdmin && (
+              <div className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link to={"/admin"} className="nav-link">
+                  Admin
+                </Link>
+              </li>
+            </div>
+            )}
         </nav>
 
         <div className="container mt-3">
@@ -94,6 +112,8 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/products" component={Shop}/>
+            <Route exact path="/admin" component={Admin}/>
 
           </Switch>
         </div>

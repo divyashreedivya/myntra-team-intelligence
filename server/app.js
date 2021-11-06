@@ -43,7 +43,7 @@ mongoose
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/products',productRouter);
-app.use('/groups',groupRouter);
+app.use('/products/groups',groupRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

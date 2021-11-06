@@ -72,6 +72,13 @@ passport.use(new JwtStrategy({
 
 exports.verifyUser = passport.authenticate('jwt',{session:false});
 
+exports.verifyAdmin = async(req,res,next)=>{
+    if(req.user.admin==false){
+        return res.status(400).json({'err':'You are not authorized'});
+    }
+    next();
+}
+
 exports.verifyToken = async(token)=>{
     try{
         const decoded = await jwt.verify(token,process.env.AUTH_SECRET);

@@ -1,7 +1,8 @@
 import { GET_USER } from '../actions/types';
 
 const initialState = {
-    userData:{}
+    userData:{},
+    isAdmin:false
 }
 
 export default function(state=initialState,action){
@@ -11,10 +12,10 @@ export default function(state=initialState,action){
             console.log(payload);
             return{
                 ...state,
-                userData: payload
+                userData: payload,
+                isAdmin:payload.admin
             }
         default:
             return state;
-            
     }
 }

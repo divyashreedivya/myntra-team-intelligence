@@ -18,6 +18,10 @@ const UserSchema = new Schema({
     phoneno:{
         type:String,
         // required:'Phone number is required'
+    },
+    admin:{
+        type:Boolean,
+        default:false
     }
 },{
     timestamps:true

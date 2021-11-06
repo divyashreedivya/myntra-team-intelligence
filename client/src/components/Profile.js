@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../actions/user";
 import { useEffect } from "react";
+import ProductSlider from "./ProductSlider";
 
 const Profile = () => {
   const { user: currentUser,isLoggedIn } = useSelector((state) => state.auth);
@@ -48,7 +49,7 @@ const Profile = () => {
       <p>
         <strong>Email:</strong> {userData.email}
       </p>
-
+<ProductSlider/>
     </div>
   );
 };
