@@ -3,7 +3,7 @@ import ProductSlider from './ProductSlider';
 import Mode from "./Mode";
 import {Button} from "react-bootstrap";
 
-export class JitsiComponent extends Component {
+export class Jitsi extends Component {
 
     domain = 'meet.jit.si';
     api = {};
@@ -11,9 +11,9 @@ export class JitsiComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            room: 'bwb-bfqi-vmg',
+            room: 'bwb-bfqj-vmg',
             user: {
-                name: 'Team Intelligence'
+                name: 'Praseedha'
             },
             isAudioMuted: false,
             isVideoMuted: false
@@ -117,15 +117,10 @@ export class JitsiComponent extends Component {
             <>
             <div>
             <header className="nav-bar">
-                <p className="item-left heading">Livestreaming</p>
+                <p className="item-left heading">Collaborative Shopping</p>
             </header>
             <div id="jitsi-iframe"></div>
-            <div class="item-center">
-              
-              <ProductSlider/>
-              <Mode/>
-              <Button className="chat-btn">Chat Bot</Button>
-            </div>
+            
             <div class="item-center">
                 <span>&nbsp;&nbsp;</span>
                 <i onClick={ () => this.executeCommand('toggleAudio') } className={`fas fa-2x grey-color ${isAudioMuted ? 'fa-microphone-slash' : 'fa-microphone'}`} aria-hidden="true" title="Mute / Unmute"></i>
@@ -141,4 +136,4 @@ export class JitsiComponent extends Component {
     }
 }
 
-export default JitsiComponent;
+export default Jitsi;

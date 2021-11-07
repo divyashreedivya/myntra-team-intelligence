@@ -1,9 +1,10 @@
 import {useState,useEffect} from "react";
-import { Container,Card,Col,Row } from "react-bootstrap";
+import { Container,Card,Col,Row,Button } from "react-bootstrap";
 import {useSelector,useDispatch} from "react-redux";
 import {Link} from 'react-router-dom';
 import { getCartGroups } from "../actions/cart";
 import CreateCartGroupForm from "./CreateCartGroup";
+import Jitsi from "./Jitsi";
 
 const CartGroups = ()=>{
     const {cartgroups,cartgroup} = useSelector((state)=>state.cart);
@@ -21,9 +22,13 @@ const CartGroups = ()=>{
         await getAllCartGroups();
         console.log(cartgroups);
     },[])
+    
 
     return(
+       
         <Container>
+             <Jitsi/>
+
             <h1>My Cart Groups</h1>
             <Row>
                 <CreateCartGroupForm/>
@@ -39,6 +44,7 @@ const CartGroups = ()=>{
                     )
                 })}
             </Row>
+            <Button className="chat-btn">Chat Bot</Button>
         </Container>
     )
 }
