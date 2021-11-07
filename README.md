@@ -12,3 +12,22 @@ The most influential resources for making buying decisions are friends and famil
  
 We provide a socializing platform that caters to the customers’ needs.
 
+## To run it locally
+```terminal
+$ git clone https://github.com/divyashreedivya/myntra-team-intelligence.git
+```
+### Client 
+```terminal
+$ cd client
+$ npm i
+$ npm start
+```
+
+### Server 
+```terminal
+$ cd server
+$ npm i
+$ npm start
+
+
+
