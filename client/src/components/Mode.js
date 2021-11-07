@@ -13,9 +13,9 @@ export default function Mode() {
             centered
           >
             <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                Modal heading
-              </Modal.Title>
+              {/* <Modal.Title id="contained-modal-title-vcenter">
+              Game
+              </Modal.Title> */}
             </Modal.Header>
             <Modal.Body className="game-modal">
               <Game/>
@@ -44,7 +44,7 @@ export default function Mode() {
                 </div>
             </div> */}
              <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
+      Launch Game
       </Button>
 
       <GameModal

@@ -13,6 +13,8 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import Shop from "./components/Shop";
 import Admin from "./components/Admin";
+import JitsiComponent from "./components/JitsiComponent";
+import Livestream from "./components/Livestream";
 // import BoardUser from "./components/BoardUser";
 // import BoardModerator from "./components/BoardModerator";
 // import BoardAdmin from "./components/BoardAdmin";
@@ -53,14 +55,19 @@ const App = () => {
             Myntra
           </Link>
           <div className="navbar-nav mr-auto">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Home
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to={"/products"} className="nav-link">
                 Products
+              </Link>
+            </li>
+            <li>
+            <Link to={"/livestream"} className="nav-link">
+                Livestream
               </Link>
             </li>
 
@@ -75,11 +82,11 @@ const App = () => {
 
           {currentUser ? (
             <div className="navbar-nav ml-auto">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
                   Profile
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link to={"/cart-groups"} className="nav-link">
                   Cart Groups
@@ -129,6 +136,7 @@ const App = () => {
             <Route exact path="/create-cart-group" component={CreateCartGroupForm}></Route>
             <Route exact path="/cart-groups" component={CartGroups}/>
             <Route exact path="/cart-groups/:id" component={CartGroup}/>
+            <Route exact path="/livestream" component={JitsiComponent}/>
           </Switch>
         </div>
       </div>

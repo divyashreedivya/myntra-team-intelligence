@@ -51,9 +51,9 @@ const Profile = () => {
       <p>
         <strong>Email:</strong> {userData.email}
       </p>
-<ProductSlider/>
+{/* <ProductSlider/>
 <br/><br/>
-<Mode/>
+<Mode/> */}
 {/* <Game/> */}
     </div>
   );
