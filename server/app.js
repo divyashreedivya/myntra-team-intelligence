@@ -13,6 +13,7 @@ var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var productRouter = require('./routes/product');
 var groupRouter = require('./routes/productGroup');
+var cartRouter = require('./routes/cart');
 
 var app = express();
 
@@ -44,12 +45,13 @@ app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/products',productRouter);
 app.use('/products/groups',groupRouter);
+app.use('/cart',cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
+app.set('view engine', 'ejs');
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

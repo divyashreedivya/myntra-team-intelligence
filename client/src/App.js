@@ -19,6 +19,9 @@ import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
 import { history } from "./helpers/history";
+import CreateCartGroupForm from "./components/CreateCartGroup";
+import CartGroups from "./components/CartGroups";
+import CartGroup from "./components/CartGroup";
 
 const App = () => {
 
@@ -74,6 +77,11 @@ const App = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to={"/cart-groups"} className="nav-link">
+                  Cart Groups
+                </Link>
+              </li>
+              <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={logOut}>
                   LogOut
                 </a>
@@ -114,7 +122,9 @@ const App = () => {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/products" component={Shop}/>
             <Route exact path="/admin" component={Admin}/>
-
+            <Route exact path="/create-cart-group" component={CreateCartGroupForm}></Route>
+            <Route exact path="/cart-groups" component={CartGroups}/>
+            <Route exact path="/cart-groups/:id" component={CartGroup}/>
           </Switch>
         </div>
       </div>

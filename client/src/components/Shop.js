@@ -2,6 +2,7 @@ import {useState,useEffect} from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { Container,Col,Row, Card ,Modal,Button} from 'react-bootstrap';
 import { getProducts ,getProduct} from "../actions/shop";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Shop = ()=>{
     const {product,products} = useSelector((state)=>{
@@ -44,9 +45,11 @@ const Shop = ()=>{
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
-                {product.name}
+                {product.name}<button className="btn"><FaShoppingCart/></button>
               </Modal.Title>
+            
             </Modal.Header>
+            
             <Modal.Body>
               <p>Category : {product.category}</p>
               <p>Details:
@@ -75,6 +78,7 @@ const Shop = ()=>{
                         <Card  key={i} onClick={()=>getProductData(prod._id)}>
                             <Card.Body>
                             <Card.Title>{prod.name}</Card.Title>
+                            <button className="btn cart-btn"><FaShoppingCart/></button>
                             <Card.Text>
                                 <p>Category: {prod.category}</p>
                                 <p>Price : {prod.price}</p>
