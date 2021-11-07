@@ -1,0 +1,21 @@
+.user-g{
+    border-radius: 20px;
+    background-color: antiquewhite;
+    margin-bottom: 2%;
+}
+.cart-btn{
+    float: right;
+    size:50px;
+}
+.game-modal{
+    height: 100vh;
+}
+.prod-img{
+    width:100px
+}
+h1{
+    text-align: center;
+}
+.chat-btn{
+    margin-left: 100px;
+}
