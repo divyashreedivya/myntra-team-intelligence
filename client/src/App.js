@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Router, Switch, Route, Link } from "react-router-dom";
-
+import './App.css';
+import Game from './components/Game';
+import Mode from './components/Mode';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -40,6 +42,8 @@ const App = () => {
   const logOut = () => {
     dispatch(logout());
   };
+
+
 
   return (
     <Router history={history}>
@@ -129,6 +133,8 @@ const App = () => {
         </div>
       </div>
     </Router>
+
+  
   );
 };
 
