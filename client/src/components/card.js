@@ -11,7 +11,7 @@ const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
   return (
     <>
  <div
-      className={classnames("card", {
+      className={classnames("card1", {
         "is-flipped": isFlipped,
         "is-inactive": isInactive
       })}

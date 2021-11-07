@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../actions/user";
 import { useEffect } from "react";
 import ProductSlider from "./ProductSlider";
+import Mode from "./Mode";
+import Game from "./Game";
 
 const Profile = () => {
   const { user: currentUser,isLoggedIn } = useSelector((state) => state.auth);
@@ -50,6 +52,9 @@ const Profile = () => {
         <strong>Email:</strong> {userData.email}
       </p>
 <ProductSlider/>
+<br/><br/>
+<Mode/>
+{/* <Game/> */}
     </div>
   );
 };

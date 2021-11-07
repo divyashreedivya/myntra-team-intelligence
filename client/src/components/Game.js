@@ -147,7 +147,7 @@ export default function Game() {
         Select two cards with same content consequtively to make them vanish
       </div>
     </header>
-    <div className="container">
+    <div className="cont">
       {cards.map((card, index) => {
         return (
           <Card
